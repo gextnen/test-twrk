@@ -1,11 +1,16 @@
 <template>
-    <div>
-        <Nuxt />
-    </div>
+  <Container>
+    <TheHeader />
+    <Nuxt />
+  </Container>
 </template>
 
 <script>
-export default {}
+import Container from "@/components/display/Container.vue";
+import TheHeader from "@/components/display/TheHeader.vue";
+export default {
+  components: { TheHeader, Container },
+};
 </script>
 
 <style lang="scss">
@@ -14,24 +19,23 @@ input,
 optgroup,
 select,
 textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 html {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 body {
-    @apply font-roboto text-text-main;
-    font-size: 1.4rem;
-    overflow-x: hidden;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: transparent;
+  @apply font-roboto text-text-main;
+  font-size: 1.4rem;
+  overflow-x: hidden;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
-
 </style>
