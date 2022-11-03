@@ -10,17 +10,16 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const route = useRoute();
-
     const navigationItems = computed(() => [
       {
         title: "Калькулятор",
         path: "/calculator/",
-        isActive: route.name === "calculator",
+        isActive: route.value.name === "Calculator",
       },
       {
         title: "Курс рубля",
         path: "/rate/",
-        isActive: route.name === "rate",
+        isActive: route.value.name === "Rate",
       },
     ]);
     return {
@@ -31,9 +30,10 @@ export default defineComponent({
 });
 </script>
 <template>
-  <div class="py-4">
+  <div class="py-4 bg-gray">
     <NuxtLink
-      class="pr-8"
+      class="pr-8 font-medium"
+      :class="item.isActive ? 'text-text-gray-700' : 'text-text-gray-500'"
       v-for="item in navigationItems"
       :to="item.path"
       :key="item.title"

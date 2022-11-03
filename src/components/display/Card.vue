@@ -2,12 +2,17 @@
 import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
-  setup() {},
+  props: {
+    overrideClases: {
+      type: Object,
+      default: () => {},
+    },
+  },
 });
 </script>
 
 <template>
-  <div class="max-w-[1440px] px-[15px] my-0 mx-auto">
+  <div class="rounded-[16px] p-8 bg-secondary" :class="overrideClases">
     <slot />
   </div>
 </template>
