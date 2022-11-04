@@ -1,7 +1,9 @@
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
+import ListItem from "../../display/ListItem.vue";
 
 export default defineComponent({
+  components: { ListItem },
   setup() {
     const items = [
       "Incididunt ut labore et dolore magna aliqua",
@@ -24,8 +26,7 @@ export default defineComponent({
   <div>
     <ul>
       <li v-for="item in items" :key="item">
-        <span class="text-red mr-3">•</span>
-        <span v-text="item" />
+        <ListItem :name="item" />
       </li>
     </ul>
   </div>

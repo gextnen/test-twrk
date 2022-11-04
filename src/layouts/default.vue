@@ -1,8 +1,10 @@
 <template>
-  <Container>
+  <div>
     <TheHeader />
-    <Nuxt />
-  </Container>
+    <Container>
+      <Nuxt />
+    </Container>
+  </div>
 </template>
 
 <script>

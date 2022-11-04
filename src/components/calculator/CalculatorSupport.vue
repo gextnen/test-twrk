@@ -25,9 +25,17 @@ export default defineComponent({
         />
       </div>
       <div class="flex flex-col text-center">
-        <span class="text-50 text-text-blue" v-text="'8 (800) 888-90-28'" />
+        <a
+          href="tel:+79998887766"
+          class="text-50 text-text-blue"
+          v-text="'8 (800) 888-90-28'"
+        />
         <span class="text-main text-24" v-text="'или'" />
-        <span class="text-34 text-text-blue" v-text="'info@example.ru'" />
+        <a
+          href="mailto:info@example.ru"
+          class="text-34 text-text-blue"
+          v-text="'info@example.ru'"
+        />
       </div>
     </div>
   </Card>

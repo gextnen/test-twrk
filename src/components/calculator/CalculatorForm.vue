@@ -81,7 +81,7 @@ export default defineComponent({
     <Card class="flex items-center mt-11">
       <Mark :icon="'info'" class="mr-11" />
       <TheText
-        :content="`Итого: ${result || '...'}`"
+        :content="`Итого: ${typeof result === 'number' ? result : '...'}`"
         :overrideClasses="'text-24 font-bold text-primary'"
       />
     </Card>
