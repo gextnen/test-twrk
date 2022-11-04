@@ -20,7 +20,7 @@ export default defineComponent({
 
 <template>
   <input
-    :type="text"
+    :type="type"
     class="p-5 border border-[#DFDFDF] rounded-[5px] placeholder-text-text-300"
     :class="overrideClasses"
   />

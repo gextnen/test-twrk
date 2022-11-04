@@ -1,10 +1,12 @@
 <script>
-import { defineComponent } from "@nuxtjs/composition-api";
-import Card from "../display/Card.vue";
-import InputField from "../entry/InputField.vue";
+import { defineComponent, ref } from "@nuxtjs/composition-api";
+import Card from "@/components/display/Card.vue";
+import Mark from "@/components/display/Mark.vue";
+import InputField from "@/components/entry/InputField.vue";
+import TheText from "@/components/display/TheText.vue";
 
 export default defineComponent({
-  components: { InputField, Card },
+  components: { InputField, Card, Mark, TheText },
   setup() {
     const fields = [
       {
@@ -23,8 +25,10 @@ export default defineComponent({
         placeholder: "Введите число",
       },
     ];
+    const result = ref(123);
     return {
       fields,
+      result,
     };
   },
 });
@@ -38,6 +42,14 @@ export default defineComponent({
       :label="field.label"
       :placeholder="field.placeholder"
     />
-    <Card> \Hello </Card>
+    <Card class="flex items-center mt-11">
+      <Mark :icon="'info'" class="mr-11" />
+      <TheText
+        :content="`Итого: ${result}`"
+        :overrideClasses="'text-24 font-bold'"
+      />
+      <!-- <TheText :content="'Нужна помощь?'" />
+      <TheText :content="'Просто свяжитесьы с нами'" /> -->
+    </Card>
   </div>
 </template>
