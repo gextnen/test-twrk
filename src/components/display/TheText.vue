@@ -16,5 +16,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div :class="overrideClasses || 'text-36 text-[#093078]'" v-text="content" />
+  <div
+    :class="overrideClasses || 'text-36 text-text-blue font-medium'"
+    v-text="content"
+  />
 </template>

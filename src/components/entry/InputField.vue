@@ -1,9 +1,7 @@
 <script>
-import { defineComponent } from "@nuxtjs/composition-api";
-import TextInput from "./TextInput.vue";
+import { defineComponent, ref } from "@nuxtjs/composition-api";
 
 export default defineComponent({
-  components: { TextInput },
   props: {
     label: {
       type: String,
@@ -19,16 +17,32 @@ export default defineComponent({
       type: String,
       default: "text",
     },
+    modelValue: {
+      type: String,
+      default: null,
+    },
   },
-  setup() {},
+  setup() {
+    const test = ref();
+    return {
+      test,
+    };
+  },
 });
 </script>
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col mb-[30px]">
     <span
       v-text="label"
       class="text-dark font-medium mb-[15px] text-14 leading-19"
     />
-    <TextInput :type="type" :placeholder="placeholder" />
+    <input
+      :type="type"
+      class="p-5 border border-[#DFDFDF] rounded-[5px] placeholder-text-text-300"
+      :placeholder="placeholder"
+      :class="overrideClasses"
+      :value="modelValue"
+      @input="$emit('input', $event.target.value)"
+    />
   </div>
 </template>

@@ -34,7 +34,8 @@ module.exports = {
             30: "30px",
             32: "32px",
             34: "34px",
-            36: "36px"
+            36: "36px",
+            50: "50px"
         },
         colors: {
             primary   : "#0F4471",
@@ -46,6 +47,7 @@ module.exports = {
             text: {
                 main: "#404456",
                 dark: "#2C3A4B",
+                blue: "#093078",
                 gray: {
                     300: "#A0A3BD",
                     500: "#666666",

@@ -6,11 +6,17 @@
 </template>
 
 <script>
+import { defineComponent, useStore } from "@nuxtjs/composition-api";
+
 import Container from "@/components/display/Container.vue";
 import TheHeader from "@/components/display/TheHeader.vue";
-export default {
+export default defineComponent({
   components: { TheHeader, Container },
-};
+  setup() {
+    const store = useStore();
+    store.dispatch("getValutes");
+  },
+});
 </script>
 
 <style lang="scss">

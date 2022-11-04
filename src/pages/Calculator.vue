@@ -6,7 +6,6 @@ import CalculatorInfo from "@/components/calculator/CalculatorInfo/CalculatorInf
 
 export default defineComponent({
   components: { Title, CalculatorForm, CalculatorInfo },
-  setup() {},
 });
 </script>
 
@@ -16,6 +15,7 @@ export default defineComponent({
     <div class="grid-main">
       <CalculatorForm class="grid-main__calc" />
       <CalculatorInfo class="grid-main__info" />
+      <CalculatorSupport class="grid-main__support" />
     </div>
   </div>
 </template>
@@ -27,7 +27,10 @@ export default defineComponent({
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-  &__calc {
+  &__support {
+    margin-top: 40px;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 }
 </style>
